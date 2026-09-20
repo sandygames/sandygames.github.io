@@ -7,7 +7,7 @@
 
 This policy describes what Goo Patrol stores on your device and what third parties may collect when you play. The game is made for families. It does not require an account and does not use Apple’s App Tracking Transparency prompt.
 
-If you have questions, open an issue at [github.com/sandygames/goopatrol](https://github.com/sandygames/goopatrol).
+If you have feedback, questions, or need support, email [sandygames@googlegroups.com](mailto:sandygames@googlegroups.com).
 
 ---
 
@@ -84,4 +84,4 @@ We may update this policy. The effective date at the top will change. Continued 
 ## 9. Contact
 
 Sandy Games  
-GitHub: [github.com/sandygames/goopatrol](https://github.com/sandygames/goopatrol)
+Email: [sandygames@googlegroups.com](mailto:sandygames@googlegroups.com)
