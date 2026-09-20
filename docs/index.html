@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Sandy Studio creates joyful, kid-friendly games and apps for curious minds.">
+  <title>Sandy Studio | Play, explore, imagine</title>
+  <style>
+    :root {
+      --ink: #233044;
+      --muted: #5c6b7d;
+      --cream: #fffaf0;
+      --sand: #ffd978;
+      --coral: #ff8066;
+      --teal: #48c4bd;
+      --blue: #6f9ff7;
+      --white: #ffffff;
+      --shadow: 0 18px 45px rgba(35, 48, 68, .12);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--cream);
+      font-family: ui-rounded, "Nunito", "Trebuchet MS", system-ui, sans-serif;
+      line-height: 1.6;
+    }
+
+    a { color: inherit; }
+    .container { width: min(1100px, calc(100% - 40px)); margin: 0 auto; }
+    .site-header { padding: 22px 0; }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; font-weight: 900; font-size: 1.25rem; }
+    .brand-mark { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 14px; background: var(--sand); transform: rotate(-8deg); font-size: 1.6rem; }
+    nav { display: flex; gap: 24px; color: var(--muted); font-weight: 700; }
+    nav a { text-decoration: none; }
+    nav a:hover, nav a:focus { color: var(--coral); }
+
+    .hero { position: relative; overflow: hidden; padding: 72px 0 100px; }
+    .hero::before, .hero::after { content: ""; position: absolute; border-radius: 50%; z-index: -1; }
+    .hero::before { width: 300px; height: 300px; right: -90px; top: 20px; background: #ffeab0; }
+    .hero::after { width: 180px; height: 180px; left: -70px; bottom: 10px; background: #c9f0e5; }
+    .hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; align-items: center; gap: 60px; }
+    .eyebrow { color: var(--coral); font-weight: 900; letter-spacing: .12em; text-transform: uppercase; font-size: .8rem; }
+    h1, h2, h3 { line-height: 1.1; margin: 0 0 18px; }
+    h1 { max-width: 620px; font-size: clamp(3rem, 7vw, 5.6rem); letter-spacing: -.06em; }
+    h2 { font-size: clamp(2rem, 4vw, 3.2rem); letter-spacing: -.04em; }
+    .hero p { max-width: 560px; color: var(--muted); font-size: 1.2rem; }
+    .button { display: inline-block; margin-top: 18px; padding: 14px 22px; border-radius: 999px; background: var(--ink); color: var(--white); text-decoration: none; font-weight: 900; box-shadow: 0 8px 0 #111a28; transition: transform .2s, box-shadow .2s; }
+    .button:hover, .button:focus { transform: translateY(3px); box-shadow: 0 5px 0 #111a28; }
+    .hero-art { position: relative; min-height: 350px; display: grid; place-items: center; }
+    .sun { width: 250px; height: 250px; border-radius: 42% 58% 56% 44%; background: var(--sand); transform: rotate(12deg); box-shadow: var(--shadow); }
+    .sun::before { content: "✦"; display: block; margin: 40px 0 0 42px; color: var(--coral); font-size: 3rem; }
+    .sun::after { content: "☻"; display: block; text-align: center; margin-top: 18px; color: var(--ink); font-size: 6rem; }
+    .sticker { position: absolute; padding: 12px 18px; border-radius: 20px; color: var(--ink); font-weight: 900; box-shadow: var(--shadow); }
+    .sticker.one { top: 5%; right: 8%; background: var(--teal); transform: rotate(8deg); }
+    .sticker.two { bottom: 8%; left: 6%; background: var(--coral); transform: rotate(-10deg); }
+
+    section { padding: 88px 0; }
+    .section-heading { max-width: 650px; margin-bottom: 34px; }
+    .section-heading p { color: var(--muted); font-size: 1.1rem; }
+    .values { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .value-card, .game-card { background: var(--white); border-radius: 24px; padding: 28px; box-shadow: var(--shadow); }
+    .value-icon { display: grid; place-items: center; width: 54px; height: 54px; margin-bottom: 20px; border-radius: 18px; font-size: 1.7rem; background: #e9f8f4; }
+    .value-card:nth-child(2) .value-icon { background: #fff0df; }
+    .value-card:nth-child(3) .value-icon { background: #e9efff; }
+    .value-card p, .game-card p { color: var(--muted); }
+
+    #games { background: #f2f8ff; }
+    .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .game-card { padding: 0; overflow: hidden; }
+    .game-art { display: grid; place-items: center; min-height: 170px; font-size: 4.5rem; }
+    .game-card:nth-child(1) .game-art { background: #ffe2a2; }
+    .game-card:nth-child(2) .game-art { background: #c9f0e5; }
+    .game-card:nth-child(3) .game-art { background: #d9e3ff; }
+    .game-info { padding: 24px; }
+    .tag { display: inline-block; padding: 5px 10px; border-radius: 99px; background: #eef1f5; color: var(--muted); font-size: .8rem; font-weight: 800; }
+    .coming-soon { text-align: center; margin-top: 30px; color: var(--muted); font-weight: 700; }
+
+    .contact { text-align: center; }
+    .contact p { max-width: 560px; margin: 0 auto; color: var(--muted); }
+    footer { padding: 28px 0; border-top: 1px solid #eadfc9; color: var(--muted); font-size: .9rem; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 20px; }
+
+    @media (max-width: 760px) {
+      .container { width: min(100% - 28px, 560px); }
+      .hero { padding: 40px 0 70px; }
+      .hero-grid, .values, .gallery { grid-template-columns: 1fr; }
+      .hero-grid { gap: 30px; }
+      .hero-art { min-height: 280px; }
+      nav { gap: 12px; font-size: .9rem; }
+      .footer-inner { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Sandy Studio home"><span class="brand-mark">☀</span> Sandy Studio</a>
+      <nav aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#games">Games &amp; apps</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Big imagination. Little screens.</div>
+          <h1>Playful worlds for curious kids.</h1>
+          <p>Sandy Studio builds joyful, kid-friendly games and apps that make learning, creating, and exploring feel like an adventure.</p>
+          <a class="button" href="#games">Explore our creations <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="sun"></div>
+          <div class="sticker one">made with care</div>
+          <div class="sticker two">let's play!</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Our studio</div>
+          <h2>Safe, silly, and full of wonder.</h2>
+          <p>We believe the best digital experiences give kids room to be themselves. Every Sandy Studio idea starts with a simple goal: bring a little more joy to playtime.</p>
+        </div>
+        <div class="values">
+          <article class="value-card"><div class="value-icon" aria-hidden="true">🛡️</div><h3>Kid-first</h3><p>Thoughtful experiences designed with young players and their grown-ups in mind.</p></article>
+          <article class="value-card"><div class="value-icon" aria-hidden="true">💡</div><h3>Curiosity-powered</h3><p>Open-ended play that invites questions, creativity, and happy discoveries.</p></article>
+          <article class="value-card"><div class="value-icon" aria-hidden="true">💛</div><h3>Made with heart</h3><p>Warm, welcoming worlds made by a small team who care about every detail.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="games">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">The gallery</div>
+          <h2>Our games &amp; apps</h2>
+          <p>Our shelves are still filling up! Here is where we’ll showcase our games and apps as they come to life.</p>
+        </div>
+        <div class="gallery">
+          <article class="game-card"><div class="game-art" aria-hidden="true">🧩</div><div class="game-info"><span class="tag">Coming soon</span><h3>Game title</h3><p>A bright new adventure is on the way.</p></div></article>
+          <article class="game-card"><div class="game-art" aria-hidden="true">🌈</div><div class="game-info"><span class="tag">Coming soon</span><h3>App title</h3><p>A playful place to learn and explore.</p></div></article>
+          <article class="game-card"><div class="game-art" aria-hidden="true">🚀</div><div class="game-info"><span class="tag">Coming soon</span><h3>Your next favorite</h3><p>More smiles, stories, and surprises ahead.</p></div></article>
+        </div>
+        <p class="coming-soon">New creations landing here soon ✨</p>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="eyebrow">Say hello</div>
+        <h2>Come play with us.</h2>
+        <p>Want to hear about new releases or share an idea? We’d love to hear from you.</p>
+        <a class="button" href="mailto:hello@sandystudio.example">hello@sandystudio.example</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner"><span>© 2026 Sandy Studio</span><span>Made for curious minds, big and small.</span></div>
+  </footer>
+</body>
+</html>
