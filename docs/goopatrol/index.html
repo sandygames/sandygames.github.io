@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Goo Patrol — Tidy the mess. Pop the goo!</title>
+  <meta name="description" content="Goo Patrol is a kid-friendly iOS landscape shooter. Move with either thumb — the rifle auto-fires. Pop goo, tidy four worlds, and dash out of trouble.">
+  <link rel="canonical" href="./">
+  <style>
+    :root {
+      --ink: #123;
+      --white: #fff;
+      --play: #f25147;
+      --upgrade: #f2b826;
+      --how: #3f9ef2;
+      --ads: #8c52e0;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: "Avenir Next", "Segoe UI", sans-serif;
+      color: var(--ink);
+      line-height: 1.5;
+      background: linear-gradient(180deg, #73c7f2 0%, #8cd162 100%);
+      min-height: 100vh;
+    }
+    a { color: #0b5cad; }
+    header, main, footer { width: min(960px, calc(100% - 32px)); margin: 0 auto; }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 0 8px;
+    }
+    .brand {
+      font-weight: 800;
+      font-size: 1.15rem;
+      color: var(--white);
+      text-decoration: none;
+      text-shadow: 1px 2px 0 rgba(0,0,0,.2);
+    }
+    nav a {
+      color: var(--white);
+      font-weight: 700;
+      text-decoration: none;
+      margin-left: 16px;
+    }
+    .hero {
+      background: rgba(255,255,255,.18);
+      border: 4px solid #111;
+      border-radius: 28px;
+      padding: 36px 28px;
+      margin: 16px auto 28px;
+      text-align: center;
+      box-shadow: 4px 6px 0 rgba(0,0,0,.15);
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: clamp(2.2rem, 6vw, 3.4rem);
+      letter-spacing: .02em;
+      color: var(--white);
+      text-shadow: 2px 3px 0 rgba(0,0,0,.22);
+    }
+    .tag {
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: rgba(255,255,255,.95);
+      margin: 0 0 22px;
+    }
+    .actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      display: inline-block;
+      font-weight: 800;
+      font-size: 1.05rem;
+      text-decoration: none;
+      color: var(--white);
+      border: 4px solid #111;
+      border-radius: 16px;
+      padding: 12px 22px;
+      min-width: 200px;
+    }
+    .btn-play { background: var(--play); }
+    .btn-ghost { background: rgba(0,0,0,.28); }
+    .soon {
+      font-size: .9rem;
+      font-weight: 700;
+      color: rgba(255,255,255,.9);
+      margin: 14px 0 0;
+    }
+    h2 { margin: 0 0 10px; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-bottom: 36px;
+    }
+    .card {
+      background: rgba(255,255,255,.92);
+      border: 4px solid #111;
+      border-radius: 20px;
+      padding: 18px 16px;
+    }
+    .card h3 { margin: 0 0 6px; }
+    .card p { margin: 0; }
+    footer {
+      padding: 12px 0 32px;
+      color: var(--white);
+      font-weight: 600;
+      text-align: center;
+    }
+    footer a { color: var(--white); }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="brand" href="./">Sandy Games</a>
+    <nav>
+      <a href="#goo-patrol">Goo Patrol</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="goo-patrol">
+      <h1>GOO PATROL</h1>
+      <p class="tag">Tidy the mess. Pop the goo!</p>
+      <p>A kid-friendly landscape shooter for iPhone and iPad. Steer with either thumb — the rifle aims and fires by itself. Dash, watch the radar, and pop blobs, toys, aliens, and runaway donuts across four silly worlds.</p>
+      <div class="actions">
+        <!-- Replace href with the App Store URL after the app is live. -->
+        <a class="btn btn-play" href="#download">App Store</a>
+        <a class="btn btn-ghost" href="privacy.html">Privacy Policy</a>
+      </div>
+      <p class="soon" id="download">Coming soon on the App Store for iPhone and iPad (landscape).</p>
+    </section>
+
+    <section class="grid" aria-label="What you do">
+      <article class="card">
+        <h3>Either-hand move</h3>
+        <p>One stick, left or right thumb. No twin-stick aiming.</p>
+      </article>
+      <article class="card">
+        <h3>Auto-fire</h3>
+        <p>The hero always shoots the nearest goo. You just drive.</p>
+      </article>
+      <article class="card">
+        <h3>Four zones</h3>
+        <p>Playground, toy box, space, and kitchen — each with a boss.</p>
+      </article>
+      <article class="card">
+        <h3>Family first</h3>
+        <p>Goo pops into confetti. Optional $0.99 Remove Ads purchase.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>Sandy Games · Goo Patrol · <a href="privacy.html">Privacy Policy</a> · <a href="https://github.com/sandygames/goopatrol">GitHub</a></p>
+  </footer>
+</body>
+</html>
