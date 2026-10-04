@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FixVerdict Privacy Policy</title>
+  <meta name="description" content="Privacy policy for FixVerdict — how we handle accounts, photos, AI processing, and data deletion." />
+  <link rel="icon" href="../assets/app-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,560;9..40,680&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand-lockup" href="../">
+        <img src="../assets/app-icon.png" width="40" height="40" alt="" />
+        <span>FixVerdict</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="../#support">Support</a>
+        <a href="./" aria-current="page">Privacy</a>
+        <a href="https://apps.apple.com/us/app/fixverdict/id6817191674">Download</a>
+      </nav>
+    </header>
+
+    <main class="legal">
+      <h1>Privacy Policy</h1>
+      <p class="meta">Last updated: October 3, 2026</p>
+
+      <p>FixVerdict (“we”, “us”) helps homeowners photograph residential issues and receive AI-assisted triage guidance. This policy explains what we collect and how we use it.</p>
+
+      <h2>Accounts</h2>
+      <p>We use Supabase Auth. Sign-in may use Sign in with Apple or email magic links. We store your account identifier and session metadata needed to keep you signed in.</p>
+
+      <h2>Photos</h2>
+      <p><strong>We do not keep your photos on our servers after analysis.</strong> When you submit a photo, it is uploaded briefly so our servers can run the diagnosis, then deleted from private storage as soon as analysis finishes. We do not sell photos or use them for advertising. A small thumbnail may remain on your device for History.</p>
+
+      <h2>AI processing</h2>
+      <p>Diagnosis requests are processed by Google Gemini models via Google AI Studio / Google Generative AI APIs. Image content necessary for the diagnosis is sent to that service under our server-side control for the duration of the request. Text results (identification, urgency, price range, verdict, reasoning) are stored in your account history so you can revisit them. Google’s processing is subject to their terms and policies.</p>
+
+      <h2>Subscriptions</h2>
+      <p>Purchases are handled by Apple App Store / Google Play via RevenueCat. We receive entitlement status (for example, available diagnosis credits) but not your full payment card details.</p>
+
+      <h2>Data retention &amp; deletion</h2>
+      <p>Photos: deleted from our storage immediately after a successful diagnosis (orphaned uploads from abandoned requests may be purged by automated cleanup). Verdict text: kept in your account until you ask us to delete it. You may request deletion of your account and associated diagnoses by emailing <a href="mailto:fixverdict@googlegroups.com">fixverdict@googlegroups.com</a>. We will delete or anonymize personal data unless we must retain a limited record for legal or security reasons.</p>
+
+      <h2>Contact</h2>
+      <p>Questions, support, or feedback: <a href="mailto:fixverdict@googlegroups.com">fixverdict@googlegroups.com</a></p>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <a href="../">Home</a>
+        ·
+        <a href="https://apps.apple.com/us/app/fixverdict/id6817191674">App Store</a>
+        ·
+        <a href="mailto:fixverdict@googlegroups.com">Contact</a>
+      </div>
+      <div>© FixVerdict</div>
+    </footer>
+  </div>
+</body>
+</html>
