@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Support — Tripolony</title>
+  <meta name="description" content="Contact Tripolony at tripolony@googlegroups.com.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="wrap">
+    <header class="site">
+      <a class="brand" href="index.html">
+        <svg width="22" height="22" viewBox="0 0 32 32" aria-hidden="true">
+          <path fill="#0284C7" d="M16 3c-5 0-9 3.9-9 8.8C7 18.4 16 29 16 29s9-10.6 9-17.2C25 6.9 21 3 16 3zm0 12.2a3.4 3.4 0 1 1 0-6.8 3.4 3.4 0 0 1 0 6.8z"/>
+        </svg>
+        Tripolony
+      </a>
+      <nav aria-label="Site">
+        <a href="privacy.html">Privacy</a>
+        <a href="support.html" aria-current="page">Support</a>
+      </nav>
+    </header>
+
+    <main id="main" class="page">
+      <p class="kicker">Support</p>
+      <h1>Contact us</h1>
+      <div class="prose">
+        <p>Questions, feedback, a privacy request, or a post you want removed: write to <a href="mailto:tripolony@googlegroups.com">tripolony@googlegroups.com</a>. The form opens that address in your mail app with your note filled in. Nothing is sent until you send the email.</p>
+      </div>
+
+      <form id="contact" action="mailto:tripolony@googlegroups.com" method="post" enctype="text/plain">
+        <label>Your name
+          <input name="name" type="text" autocomplete="name" required>
+        </label>
+        <label>Your email
+          <input name="email" type="email" autocomplete="email" required>
+        </label>
+        <label>Message
+          <textarea name="message" required></textarea>
+        </label>
+        <button class="button" type="submit">Email tripolony@googlegroups.com</button>
+        <p id="sent" class="sent" hidden>Your mail app should open with this message. Send it from there.</p>
+      </form>
+    </main>
+
+    <footer class="site">
+      <span>Tripolony</span>
+      <nav aria-label="Footer">
+        <a href="privacy.html">Privacy</a>
+        <a href="support.html">Support</a>
+        <a href="mailto:tripolony@googlegroups.com">tripolony@googlegroups.com</a>
+      </nav>
+    </footer>
+  </div>
+  <script>
+    document.getElementById("contact").addEventListener("submit", function (event) {
+      event.preventDefault();
+      var data = new FormData(event.target);
+      var body = "Name: " + data.get("name") + "\nReply to: " + data.get("email") + "\n\n" + data.get("message");
+      var link = "mailto:tripolony@googlegroups.com?subject=" + encodeURIComponent("Tripolony support") + "&body=" + encodeURIComponent(body);
+      document.getElementById("sent").hidden = false;
+      window.location.href = link;
+    });
+  </script>
+</body>
+</html>
