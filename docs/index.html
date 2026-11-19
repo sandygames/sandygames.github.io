@@ -295,18 +295,47 @@
 
       .game-card {
         overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .game-card:hover,
+      .game-card:focus-visible {
+        transform: translateY(-3px);
+        box-shadow: var(--shadow);
       }
 
       .game-art {
-        min-height: 180px;
+        min-height: 168px;
         display: grid;
         place-items: center;
-        font-size: 4.2rem;
       }
 
-      .game-card:nth-child(1) .game-art { background: linear-gradient(135deg, #ffe4a8, #ffd18d); }
-      .game-card:nth-child(2) .game-art { background: linear-gradient(135deg, #ccefe8, #a1e0d7); }
-      .game-card:nth-child(3) .game-art { background: linear-gradient(135deg, #dfe9ff, #c5d8ff); }
+      .game-art img,
+      .game-mark {
+        width: 92px;
+        height: 92px;
+        border-radius: 22px;
+        object-fit: cover;
+        box-shadow: 0 10px 24px rgba(31, 45, 61, 0.16);
+      }
+
+      .game-mark {
+        display: grid;
+        place-items: center;
+        background: rgba(255, 255, 255, 0.78);
+        color: var(--ink);
+        font-size: 2.4rem;
+        font-weight: 900;
+      }
+
+      .gallery-status {
+        margin: 0;
+        color: var(--muted);
+        font-weight: 700;
+      }
 
       .game-content {
         padding: 1.4rem 1.3rem 1.6rem;
@@ -489,38 +518,12 @@
             <div class="eyebrow">Gallery</div>
             <h2>Games, apps, and productivity tools</h2>
             <p>
-              This is where we’ll showcase the projects we’re building—playful games, helpful apps, and practical tools for everyday creativity and organization.
+              Playful games, helpful apps, and practical tools. Each card opens that app’s site.
             </p>
           </div>
 
-          <div class="gallery-grid">
-            <article class="card game-card">
-              <div class="game-art" aria-hidden="true">🧩</div>
-              <div class="game-content">
-                <span class="tag">Game</span>
-                <h3>Rainbow Puzzle Quest</h3>
-                <p>A bright, logic-based adventure full of colorful challenges and cheerful surprises.</p>
-              </div>
-            </article>
-
-            <article class="card game-card">
-              <div class="game-art" aria-hidden="true">🌈</div>
-              <div class="game-content">
-                <span class="tag">App</span>
-                <h3>Story Sprouts</h3>
-                <p>An imaginative app where kids create stories, characters, and magical worlds.</p>
-              </div>
-            </article>
-
-            <article class="card game-card">
-              <div class="game-art" aria-hidden="true">📚</div>
-              <div class="game-content">
-                <span class="tag">Productivity</span>
-                <h3>Little Planner</h3>
-                <p>A simple, cheerful tool that helps kids plan tasks, routines, and creative goals with ease.</p>
-              </div>
-            </article>
-          </div>
+          <div class="gallery-grid" id="app-grid"></div>
+          <p class="gallery-status" id="app-status" hidden></p>
 
           <div class="cta">More magical projects are on the way ✨</div>
         </div>
@@ -546,5 +549,92 @@
         <span>Made for curious minds, big and small.</span>
       </div>
     </footer>
+
+    <script>
+      const accents = [
+        "linear-gradient(135deg, #ffe4a8, #ffd18d)",
+        "linear-gradient(135deg, #ccefe8, #a1e0d7)",
+        "linear-gradient(135deg, #dfe9ff, #c5d8ff)",
+        "linear-gradient(135deg, #ffd6cc, #ffc1b3)",
+        "linear-gradient(135deg, #e6dcff, #d4c8ff)",
+        "linear-gradient(135deg, #fff1c9, #ffe08a)"
+      ];
+
+      const grid = document.getElementById("app-grid");
+      const status = document.getElementById("app-status");
+
+      function showStatus(message) {
+        status.hidden = false;
+        status.textContent = message;
+      }
+
+      function renderApps(apps) {
+        const visible = apps.filter((app) => app && app.published === true && app.folder && app.name);
+        grid.replaceChildren();
+
+        if (!visible.length) {
+          showStatus("No published apps yet.");
+          return;
+        }
+
+        status.hidden = true;
+        visible.forEach((app, index) => {
+          const card = document.createElement("a");
+          card.className = "card game-card";
+          card.href = String(app.folder).replace(/\/+$/, "") + "/";
+
+          const art = document.createElement("div");
+          art.className = "game-art";
+          art.setAttribute("aria-hidden", "true");
+          art.style.background = accents[index % accents.length];
+
+          if (app.icon) {
+            const image = document.createElement("img");
+            image.src = app.icon;
+            image.alt = "";
+            art.append(image);
+          } else {
+            const mark = document.createElement("span");
+            mark.className = "game-mark";
+            mark.textContent = String(app.name).trim().charAt(0) || "•";
+            art.append(mark);
+          }
+
+          const content = document.createElement("div");
+          content.className = "game-content";
+
+          if (app.tag) {
+            const tag = document.createElement("span");
+            tag.className = "tag";
+            tag.textContent = app.tag;
+            content.append(tag);
+          }
+
+          const title = document.createElement("h3");
+          title.textContent = app.name;
+
+          const description = document.createElement("p");
+          description.textContent = app.description || "";
+
+          content.append(title, description);
+          card.append(art, content);
+          grid.append(card);
+        });
+      }
+
+      fetch("apps.json")
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Could not load apps.json");
+          }
+          return response.json();
+        })
+        .then((config) => {
+          renderApps(Array.isArray(config.apps) ? config.apps : []);
+        })
+        .catch(() => {
+          showStatus("The app list could not be loaded.");
+        });
+    </script>
   </body>
 </html>

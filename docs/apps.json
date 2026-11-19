@@ -1,0 +1,85 @@
+{
+  "note": "Each folder under docs/ is one app site. Set published to false to hide that app from the studio homepage.",
+  "apps": [
+    {
+      "name": "BittyPals",
+      "folder": "bittypals",
+      "tag": "Game",
+      "description": "A pixel cat companion. Feed, play, clean up, and let them sleep so happiness stays high.",
+      "icon": "bittypals/app-icon.png",
+      "published": true
+    },
+    {
+      "name": "Drawise",
+      "folder": "drawise",
+      "tag": "Drawing",
+      "description": "Trace the red lines and learn to draw cute animals, one easy step at a time.",
+      "icon": "drawise/icon.png",
+      "published": true
+    },
+    {
+      "name": "FixVerdict",
+      "folder": "fixverdict",
+      "tag": "Home",
+      "description": "Photograph a home issue and get a DIY, call-a-pro, or emergency verdict.",
+      "icon": "fixverdict/assets/app-icon.png",
+      "published": false
+    },
+    {
+      "name": "Goodoku",
+      "folder": "goodoku",
+      "tag": "Puzzle",
+      "description": "A cozy logic puzzle. Place one goo in every row, column, and color, and keep them from touching.",
+      "icon": "goodoku/icon.png",
+      "published": true
+    },
+    {
+      "name": "Goo Patrol",
+      "folder": "goopatrol",
+      "tag": "Game",
+      "description": "A kid-friendly landscape shooter. Pop goo, tidy four worlds, and dash out of trouble.",
+      "icon": "",
+      "published": true
+    },
+    {
+      "name": "HabitGreen",
+      "folder": "habitgreen",
+      "tag": "Habits",
+      "description": "Every habit becomes a GitHub-style grid. One square a day, one tap to fill it.",
+      "icon": "habitgreen/assets/icon-512.png",
+      "published": false
+    },
+    {
+      "name": "LastChair",
+      "folder": "lastchair",
+      "tag": "Ski",
+      "description": "Record every ski and snowboard run — route, speed, vertical, and slope — privately on your phone.",
+      "icon": "lastchair/app-icon.png",
+      "published": true
+    },
+    {
+      "name": "PowderLog",
+      "folder": "powderlog",
+      "tag": "Ski",
+      "description": "Record a ski or snowboard day and come back to a map of runs, speed, vertical, and slope.",
+      "icon": "powderlog/app-icon.png",
+      "published": false
+    },
+    {
+      "name": "StopMotionPop",
+      "folder": "stopmotionpop",
+      "tag": "Video",
+      "description": "Make stop-motion movies in minutes. No account, and frames stay on the device until you share them.",
+      "icon": "stopmotionpop/assets/icon.png",
+      "published": true
+    },
+    {
+      "name": "Tripolony",
+      "folder": "tripolony",
+      "tag": "Ski",
+      "description": "Watch a ski route before you go. Video-led trip reports, starting at Snoqualmie Pass.",
+      "icon": "tripolony/favicon.svg",
+      "published": false
+    }
+  ]
+}
