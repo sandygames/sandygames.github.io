@@ -10,6 +10,14 @@
       "published": true
     },
     {
+      "name": "DemoHero",
+      "folder": "demohero",
+      "tag": "Video",
+      "description": "Record screen, camera, and voice in one take, then trim and export a product demo.",
+      "icon": "demohero/demohero-icon.png",
+      "published": true
+    },
+    {
       "name": "Drawise",
       "folder": "drawise",
       "tag": "Drawing",
